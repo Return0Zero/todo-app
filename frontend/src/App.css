@@ -1,0 +1,36 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  scroll-behavior: smooth;
+}
+
+.todo-app-container {
+  max-width: 800px;
+  padding: 1rem;
+  background-color: beige;
+}
+
+h1{
+  text-align: center;
+}
+
+.top {
+  display: flex;
+  justify-content: center;
+}
+
+input {
+  width: 400px;
+  border: none;
+  outline: none;
+  padding: 0.5rem;
+  border-bottom: 1px solid #000;
+}
+
+.add {
+  background-color: black;
+  color: aliceblue;
+  padding: 0.5rem 1.5rem;
+  cursor: pointer;
+}
