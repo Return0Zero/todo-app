@@ -5,14 +5,75 @@
   scroll-behavior: smooth;
 }
 
-.todo-app-container {
+.app-container {
+  height: 100vh;
+  width: 100vw;
+  display: grid;
+  place-content: center;
+  background-color: rgb(0, 0, 0);
+}
+
+.todo-app-container-bg {
   max-width: 800px;
+  width: 90vw;
   padding: 1rem;
-  background-color: beige;
+  position: relative;
+  z-index: 1;
+  height: 80vh;
+}
+
+.todo-app-container {
+  padding: 1rem;
+  background: linear-gradient(0deg, black, rgb(44,43,43));
+  position: relative;
+  z-index: 2;
+  height: 100%;
+  transform: scale(1.0311, 1.034);
+  overflow: hidden;
+  overflow-y: scroll;
+}
+.todo-app-container::-webkit-scrollbar {
+  background: transparent; /* Chrome/Safari/Webkit */
+  width: 0px;
+}
+
+.list-container {
+}
+
+.todo-app-container-bg::before, .todo-app-container-bg::after {
+  content: '';
+  position: absolute;
+  left: 0px;
+  top: 0px;
+  background: linear-gradient(45deg, #e6fb04, #ff6600, #00ff66, #00ffff, #ff00ff, #ff0099, #6e0dd0, #ff3300, #099fff );
+  background-size: 400%;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+  animation: animate 20s alternate infinite;
+
+}
+
+@keyframes animate {
+  0% {
+    background-position: 0 0;
+  }
+  50% {
+    background-position: 400% 0;
+  }
+  100% {
+    background-position: 0 0;
+  }
+}
+
+.todo-app-container-bg::after {
+  filter: blur(30px);
 }
 
 h1{
   text-align: center;
+  color: white;
+  margin-bottom: 5%;
 }
 
 .top {

@@ -1,6 +1,8 @@
 import { useEffect, useState } from 'react';
 import './App.css';
 import ToDo from './components/todo';
+
+
 import { addToDo, getAllToDo, updateToDo, deleteToDo } from './utils/HandleApi';
 
 function App() {
@@ -22,30 +24,34 @@ function App() {
 
   return (
     <div className="App">
-      <div className="todo-app-container">
-        <h1>To Do App</h1>
-        <div className="top">
-          <input 
-          type="text" 
-          placeholder="Add ToDos..."
-          value={text}
-          onChange={(e) => setText(e.target.value)}
-          />
-          <div 
-          className="add" 
-          onClick={ isUpdating ? 
-            () =>updateToDo(toDoId, text, setToDo, setText, setIsUpdating) 
-          : () => addToDo(text, setText, setToDo)}>
-            {isUpdating ? "Update" : "Add"}
+      <div className='app-container'>
+        <div className="todo-app-container-bg">
+          <div className="todo-app-container">
+            <h1>To-Do App</h1>
+            <div className="top">
+              <input 
+              type="text" 
+              placeholder="Add To-Do..."
+              value={text}
+              onChange={(e) => setText(e.target.value)}
+              />
+              <div 
+              className="add" 
+              onClick={ isUpdating ? 
+                () =>updateToDo(toDoId, text, setToDo, setText, setIsUpdating) 
+              : () => addToDo(text, setText, setToDo)}>
+                {isUpdating ? "Update" : "Add"}
+                </div>
             </div>
-        </div>
-        <div className="list">
-          {toDo.map((item) => <ToDo 
-          key={item._id} 
-          text={item.text} 
-          updateMode = {() => updateMode(item._id, item.text)}
-          deleteToDo = {() => deleteToDo(item._id, setToDo)}
-          />)}
+              <div className="list">
+                {toDo.map((item) => <ToDo 
+                key={item._id} 
+                text={item.text} 
+                updateMode = {() => updateMode(item._id, item.text)}
+                deleteToDo = {() => deleteToDo(item._id, setToDo)}
+                />)}
+              </div>
+          </div>
         </div>
       </div>
     </div>
