@@ -4,7 +4,6 @@
     background-color: black;
     color: white;
     padding: 1.5rem 3rem;
-    border-radius: 5px;
 }
 
 .icons {
@@ -12,7 +11,7 @@
     display: flex;
     top: 50%;
     transform: translateY(-50%);
-    right: 2%;
+    right: 5%;
     cursor: pointer;
 }
 
@@ -21,9 +20,46 @@
     font-size: 20px;
     z-index: 9;
     width: 30px;
-    margin-left: 5%;
+    margin-left: 20%;
 }
 
 .text {
     color: white;
+}
+
+
+@media (max-width: 700px) {
+
+    .icons {
+        right: 7%;
+    }
+
+    .icon {
+        margin-left: 15%;
+    }
+
+    .todo {
+        position: relative;
+        margin-top: 1rem;
+        background-color: black;
+        color: white;
+        padding: 1.5rem 1.5rem;
+    }
+}
+
+
+@media (max-width: 500px) {
+
+    .icons {
+        right: 7%;
+    }
+
+    .icon {
+        margin-left: 15%;
+        width: 25px;
+    }
+
+    .text {
+        font-size: 0.95rem;
+    }
 }

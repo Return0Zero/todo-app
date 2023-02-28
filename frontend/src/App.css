@@ -37,9 +37,6 @@
   width: 0px;
 }
 
-.list-container {
-}
-
 .todo-app-container-bg::before, .todo-app-container-bg::after {
   content: '';
   position: absolute;
@@ -74,6 +71,8 @@ h1{
   text-align: center;
   color: white;
   margin-bottom: 5%;
+  font-family: 'Dancing Script', cursive;
+  font-size: clamp(2.5rem, 8vw, 4rem);
 }
 
 .top {
@@ -94,4 +93,12 @@ input {
   color: aliceblue;
   padding: 0.5rem 1.5rem;
   cursor: pointer;
+}
+
+
+@media (max-width: 1000px) {
+  
+  .todo-app-container {
+    transform: scale(1.0315, 1.031);
+  }
 }
